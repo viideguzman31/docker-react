@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t dockertravis/docker-react -f Dockerfile.dev .
+  - docker build -t dockertravis/docker-react .
 
 script:
   -  docker run dockertravis/docker-react npm install react-scripts --save
