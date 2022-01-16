@@ -7,4 +7,16 @@ before_install:
 
 script:
   -  docker run dockertravis/docker-react npm install react-scripts --save
-  
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "react-app"
+  env: "Reactapp-env"
+  bucket_name: "elasticbeanstalk-us-east-2-262276837591"
+  bucket_path: "react-app"
+  on:
+    branch: master
+  access_key_id: $key
+  secret_access_key:
+    secure: "$secret_key"
