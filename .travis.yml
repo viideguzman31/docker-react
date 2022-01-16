@@ -6,7 +6,7 @@ before_install:
   - docker build -t dockertravis/docker-react -f Dockerfile.dev .
 
 script:
-  -  docker run -e CI=true dockertravis/docker-react npm install react-scripts --save
+  -  docker run -e CI=true dockertravis/docker-react RUN chmod a+x /usr/src/app/node_modules/.bin/react-scripts
 
 deploy:
   provider: elasticbeanstalk

@@ -1,6 +1,7 @@
 FROM node:alpine
 WORKDIR '/app'
 COPY package*.json ./
+RUN chmod a+x /usr/src/app/node_modules/.bin/react-scripts
 RUN npm install
 COPY . .
 RUN npm run build
